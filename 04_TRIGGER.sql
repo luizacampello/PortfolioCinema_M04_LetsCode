@@ -70,7 +70,7 @@ BEGIN
 	DECLARE @command NCHAR(6)
 	SET @command = CASE
 		WHEN EXISTS(SELECT * FROM inserted) AND EXISTS (SELECT * FROM deleted)
-				THEN 'Update'
+			THEN 'Update'
 		WHEN EXISTS (SELECT * FROM inserted)
 			THEN 'Insert'
 		WHEN EXISTS (SELECT * FROM deleted)
@@ -83,11 +83,14 @@ BEGIN
 		SELECT @command, GETDATE(), USER_NAME(), ins.id_portfolio, ins.cpf, ins.id_movie, ins.score
 		FROM inserted AS ins
 	ELSE IF @command = 'Delete'
-		INSERT INTO ScoreLogs (command, username, data_log, previous_idPortfolio, previous_cpf, previous_idMovie, previous_score)
+		INSERT INTO ScoreLogs (command, username, data_log, previous_idPortfolio, previous_cpf, previous_idMovie, 
+		previous_score)
 		SELECT  @command, GETDATE(), USER_NAME(), del.id_portfolio, del.cpf, del.id_movie, del.score
 		FROM deleted AS del
 	ELSE IF @command = 'Update'
-		INSERT INTO ScoreLogs (command, username, data_log, previous_idPortfolio, previous_cpf, previous_idMovie, previous_score, next_idPortfolio, next_cpf, next_idMovie, next_score)
-		SELECT @command, GETDATE(), USER_NAME(), del.id_portfolio, del.cpf, del.id_movie, del.score, ins.id_portfolio, ins.cpf, ins.id_movie, ins.score
+		INSERT INTO ScoreLogs (command, username, data_log, previous_idPortfolio, previous_cpf, previous_idMovie, 
+		previous_score, next_idPortfolio, next_cpf, next_idMovie, next_score)
+		SELECT @command, GETDATE(), USER_NAME(), del.id_portfolio, del.cpf, del.id_movie, del.score, ins.id_portfolio, 
+		ins.cpf, ins.id_movie, ins.score
 		FROM deleted AS del, inserted AS ins
 END;

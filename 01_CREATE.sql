@@ -92,38 +92,24 @@ CREATE TABLE personLogs
 
 
 ---------------------------------------------------------
-CREATE TABLE scoreLogs -- terminar
-(
-    id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
-    data_log DATETIME DEFAULT GETDATE() NOT NULL,
-    command NCHAR(6) NOT NULL,
-    username VARCHAR(100) NOT NULL,
-	previous_id_portfolio VARCHAR(255) NULL,
-    previous_cpf VARCHAR(11) NULL,
-	previous_birthDate DATE NULL,
-    previous_email VARCHAR(255) NULL,
-	previous_password VARCHAR(40) NULL,
-    next_id_portfolio VARCHAR(255) NULL, 
-    next_cpf VARCHAR(11) NULL,
-	next_birthDate DATE NULL,
-    next_email VARCHAR(255) NULL,
-	next_password VARCHAR(40) NULL
-);
 
 CREATE TABLE ScoreLogs (
 	id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	data_log DATETIME DEFAULT GETDATE() NOT NULL,
 	command NCHAR(6) NOT NULL,
 	username VARCHAR (100) NOT NULL,
-
+	previous_idPortfolio INT NULL,
 	previous_idMovie INT NULL,
 	previous_cpf VARCHAR (11) NULL,
 	previous_score SMALLINT NULL,
-
+	next_idPortfolio INT NULL,
 	next_idMovie INT NULL,
 	next_cpf VARCHAR (11) NULL,
 	next_score SMALLINT NULL,
 );
+
+SELECT * FROM scoreLogs
+DROP TABLE scoreLogs
 
 CREATE TABLE MovieLogs
 (
