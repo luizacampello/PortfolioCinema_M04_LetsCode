@@ -19,9 +19,9 @@ ON Actor (id_actor)
 CREATE INDEX ix_personLogsId
 ON personLogs (id)
 
-CREATE INDEX ix_scoreLogId
-ON ScoreLogs (id)
+CREATE INDEX ix_scoreLogsId
+ON scoreLogs (id)
 
-CREATE INDEX ix_studioId
-ON Studio (id_Studio)
+CREATE INDEX ix_movieLogsId
+ON movieLogs (id)
 

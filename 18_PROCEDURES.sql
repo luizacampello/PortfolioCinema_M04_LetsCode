@@ -1,5 +1,3 @@
-
-
 CREATE PROCEDURE sp_portfolioCategory
 	@categoryname VARCHAR (50),
 	@cpf VARCHAR (11)
@@ -116,13 +114,13 @@ AS
 	SET Person.email = @NewEmail
 	WHERE Person.CPF = @Cpf
 
-CREATE PROCEDURE sp_updateMovieRating
+CREATE PROCEDURE sp_updateMovieScore
 (
 	@Cpf VARCHAR(11),
 	@IdMovie INT,
-	@NewRating SMALLINT  
+	@NewScore SMALLINT  
 )
 AS
 	UPDATE Portfolio
-	SET Portfolio.Rating = @NewRating
+	SET Portfolio.score = @NewScore
 	WHERE Portfolio.CPF = @Cpf AND Portfolio.id_Movie = @IdMovie
