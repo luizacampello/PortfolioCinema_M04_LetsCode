@@ -19,4 +19,9 @@ ON Actor (id_actor)
 CREATE INDEX ix_personLogsId
 ON personLogs (id)
 
--- adicionar o index do scoreLog
+CREATE INDEX ix_scoreLogsId
+ON scoreLogs (id)
+
+CREATE INDEX ix_movieLogsId
+ON movieLogs (id)
+
