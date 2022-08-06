@@ -1,3 +1,12 @@
+CREATE FUNCTION fn_groupedPersonCategory()
+RETURNS TABLE  
+AS  
+RETURN  
+	 SELECT CPF,  
+		STRING_AGG(FavoriteCategories, ', ') AS [Gêneros Favoritos]  
+	 FROM fn_personCategories()  
+	 GROUP BY CPF;
+
 CREATE VIEW vw_portfolio
 AS
 	SELECT DISTINCT per.CPF, mov.title AS Filme,
@@ -8,6 +17,76 @@ AS
 	INNER JOIN Portfolio AS por ON per.CPF = por.CPF  
 	INNER JOIN Movie AS mov ON mov.id_Movie = por.id_Movie  
 	INNER JOIN Category AS cat ON mov.category = cat.id_Category
+
+CREATE FUNCTION fn_movieActors()
+RETURNS @actorsMovie Table  
+(  
+	 [Movie ID] INT,  
+	 [Title] VARCHAR(100),  
+	 [Artist ID] INT,  
+	 [Actor/Actress Name] VARCHAR(100)  
+)  
+AS  
+	BEGIN  
+		 INSERT @actorsMovie([Movie ID], [Title], [Artist ID], [Actor/Actress Name])   
+		 SELECT mov.id_Movie, mov.title, mact.id_Actor, act.name  
+		 FROM Movie AS mov  
+		 INNER JOIN movieActor AS mact  
+		 ON mov.id_Movie = mact.id_Movie  
+		 INNER JOIN Actor AS act  
+		 ON mact.id_Actor = act.id_Actor  
+		 RETURN  
+	END
+
+CREATE VIEW vw_groupedActorsMovie
+AS  
+SELECT [Movie ID],  
+	[Title],  
+	STRING_AGG([Actor/Actress Name], ', ') AS [Cast]  
+FROM fn_movieActors()  
+GROUP BY [Movie ID], [TITLE];
+
+CREATE FUNCTION fn_movieDirectors()
+RETURNS @directorsMovie Table  
+(  
+	[Movie ID] INT,  
+	[Title] VARCHAR(100),  
+	[Artist ID] INT,  
+	[Directed By] VARCHAR(100)  
+)  
+AS  
+	BEGIN  
+		INSERT @directorsMovie([Movie ID], [Title], [Artist ID], [Directed By])   
+		SELECT mov.id_Movie, mov.title, mdir.id_Director, dir.name  
+		FROM Movie AS mov  
+		INNER JOIN MovieDirector AS mdir  
+		ON mov.id_Movie= mdir.id_Movie  
+		INNER JOIN Director AS dir  
+		ON mdir.id_Director = dir.id_Director  
+		RETURN  
+	END
+
+CREATE VIEW vw_groupedDirectorsMovie AS  
+SELECT [Movie ID],
+	[Title], 
+	STRING_AGG([Directed By], ', ') AS [Directors]  
+FROM fn_movieDirectors()  
+GROUP BY [Movie ID], [TITLE];
+
+CREATE FUNCTION fn_personCategories()
+RETURNS TABLE  
+AS  
+RETURN  
+	SELECT name AS FavoriteCategories, pc.CPF FROM Category  
+	RIGHT JOIN personCategory AS pc ON pc.id_Category = Category.id_Category  
+	WHERE pc.CPF is not null
+
+CREATE VIEW vw_groupedPersonCategory AS  
+ SELECT   
+   CPF,  
+   STRING_AGG(FavoriteCategories, ', ') AS [Gêneros Favoritos]  
+ FROM fn_personCategories()  
+ GROUP BY CPF;
 
 CREATE VIEW vw_movie
 AS  
@@ -28,3 +107,45 @@ AS
 	 INNER JOIN Language ON Movie.originalLanguage = Language.id_Language  
 	 INNER JOIN Category ON Movie.category = Category.id_Category
 
+CREATE FUNCTION fn_countWatchedCategories()
+RETURNS TABLE  
+AS  
+RETURN  
+ SELECT vwp.CPF,
+	vwp.Gênero,
+	count(vwp.Gênero) AS countC,
+	CONCAT(vwp.Gênero,' (', (count(vwp.Gênero)), ')') AS categoryCount 
+FROM vw_portfolio as vwp  
+GROUP BY vwp.CPF, vwp.Gênero
+
+CREATE VIEW vw_watchedCategories
+AS
+	SELECT   
+	cwc.CPF,
+	STRING_AGG(cwc.categoryCount, ', ') WITHIN GROUP (ORDER BY cwc.countC DESC) AS [Gêneros Assistidos]
+	FROM fn_countWatchedCategories() AS cwc
+	GROUP BY CPF;
+
+CREATE VIEW vw_person
+AS  
+	SELECT person.CPF,  
+	person.name AS Nome,  
+	datediff( YY, person.birthDate, getdate()) AS Idade,  
+	person.email AS Email,  
+	gpc.[Gêneros Favoritos],  
+	(SELECT COUNT(*) FROM Portfolio AS prt WHERE prt.CPF = person.CPF) AS [Filmes Avaliados],  
+	cwc.[Gêneros Assistidos]   
+	FROM Person AS person  
+	INNER JOIN vw_groupedPersonCategory AS gpc ON person.CPF = gpc.CPF  
+	INNER JOIN vw_watchedCategories AS cwc ON person.CPF = cwc.CPF
+
+CREATE FUNCTION fn_ratingFilter
+( 
+    @cpf VARCHAR (11)  
+)  
+RETURNS TABLE  
+AS  
+RETURN  
+    SELECT DISTINCT mov.* FROM vw_movie AS mov
+	INNER JOIN vw_person AS per ON mov.Classificação <= per.Idade
+	WHERE per.CPF = @cpf;

@@ -1,3 +1,5 @@
+-- Tabelas entidade
+
 CREATE TABLE Person (
     cpf VARCHAR(11) NOT NULL,
     name VARCHAR(255) NOT NULL,
@@ -6,7 +8,6 @@ CREATE TABLE Person (
 	password VARCHAR(40) NOT NULL,
 	CONSTRAINT PK_CPF PRIMARY KEY (cpf),	
 );
-
 
 CREATE TABLE Category (
 	id_category int IDENTITY(1,1) NOT NULL CONSTRAINT PK_id_category PRIMARY KEY (id_Category),
@@ -44,7 +45,6 @@ CREATE TABLE Movie (
 		originalLanguage INT NOT NULL,
 );
 
-
 -- Tabelas Relacionais
 
 CREATE TABLE Portfolio (
@@ -72,7 +72,7 @@ CREATE TABLE PersonCategory (
 
 -- Tabelas de logs
 
-CREATE TABLE personLogs
+CREATE TABLE PersonLogs
 (
     id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
     data_log DATETIME DEFAULT GETDATE() NOT NULL,
@@ -90,9 +90,6 @@ CREATE TABLE personLogs
 	next_password VARCHAR(40) NULL
 );
 
-
----------------------------------------------------------
-
 CREATE TABLE ScoreLogs (
 	id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	data_log DATETIME DEFAULT GETDATE() NOT NULL,
@@ -107,9 +104,6 @@ CREATE TABLE ScoreLogs (
 	next_cpf VARCHAR (11) NULL,
 	next_score SMALLINT NULL,
 );
-
-SELECT * FROM scoreLogs
-DROP TABLE scoreLogs
 
 CREATE TABLE MovieLogs
 (
