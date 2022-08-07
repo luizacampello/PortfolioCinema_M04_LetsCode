@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1 style="text-align: center;"><span style="color: #b96ad9;">Portf&oacute;lio Cinematogr&aacute;fico - SQL Server</span></h1>
-<h2 style="text-align: justify;">&nbsp;</h2>
+<p style="text-align: justify;">&nbsp;</p>
 <h2 style="text-align: justify;">Entendendo o projeto</h2>
 <p style="text-align: justify;">Como parte avaliativa do m&oacute;dulo de 'Banco de Dados', foi proposta a confec&ccedil;&atilde;o de um projeto em grupo que contivesse os t&oacute;picos desenvolvidos em aula abarcando o CRUD (<strong>C</strong>reate, <strong>R</strong>ead, <strong>U</strong>pdate and <strong>D</strong>elete). Logo, deveriam existir arquivos que criassem:</p>
 <ul style="text-align: justify;">
