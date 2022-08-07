@@ -2,5 +2,5 @@
 
 
 <div aligns="center">
-<img src="diagrama_fisico.jpg" width="12000px">
+<img src="diagrama_fisico.jpg" width="1080px">
 </div>

@@ -6,11 +6,11 @@ INSERT INTO MovieActor (id_movie, id_actor) VALUES (1, 250);
 INSERT INTO MovieActor (id_movie, id_actor) VALUES (2, 251);
 INSERT INTO MovieActor (id_movie, id_actor) VALUES (2, 252);
 INSERT INTO MovieActor (id_movie, id_actor) VALUES (2, 253);
-INSERT INTO MovieActor (id_movie, id_actor) VALUES (2, 159);
+INSERT INTO MovieActor (id_movie, id_actor) VALUES (2, 169);
 INSERT INTO MovieActor (id_movie, id_actor) VALUES (3, 251);
 INSERT INTO MovieActor (id_movie, id_actor) VALUES (3, 252);
 INSERT INTO MovieActor (id_movie, id_actor) VALUES (3, 253);
-INSERT INTO MovieActor (id_movie, id_actor) VALUES (3, 159);
+INSERT INTO MovieActor (id_movie, id_actor) VALUES (3, 169);
 INSERT INTO MovieActor (id_movie, id_actor) VALUES (4, 251);
 INSERT INTO MovieActor (id_movie, id_actor) VALUES (4, 252);
 INSERT INTO MovieActor (id_movie, id_actor) VALUES (4, 253);
@@ -116,4 +116,3 @@ INSERT INTO MovieActor (id_movie, id_actor) VALUES (36, 290);
 INSERT INTO MovieActor (id_movie, id_actor) VALUES (37, 110);
 INSERT INTO MovieActor (id_movie, id_actor) VALUES (37, 91);
 INSERT INTO MovieActor (id_movie, id_actor) VALUES (37, 206);
-
