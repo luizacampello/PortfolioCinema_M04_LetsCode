@@ -12,15 +12,19 @@
 <li>tabelas de relacionamento;</li>
 <li>alters: constraints (PKs/FKs);</li>
 <li>inserts b&aacute;sicos para todas as tabelas (que os necessitassem);</li>
+<li>triggers para armazenamento de logs dos métodos (INSERT< UPDATE e DELETE);</li>
+<li>funções para recebimento de tabelas filtradas;</li>
 <li>formas de visualiza&ccedil;&otilde;es filtradas;&nbsp;</li>
 <li>regras de tratamento de dados;</li>
 <li>script - 'ReadMe' - com explica&ccedil;&otilde;es e diagramas;</li>
 </ul>
 <p style="text-align: justify;"><strong>O grupo ser&aacute; avaliado pela coer&ecirc;ncia do projeto e aplica&ccedil;&atilde;o dos seus conceitos vistos em aula. </strong><strong>Cada membro do grupo ser&aacute; avaliado individualmente por seus commits no reposit&oacute;rio.</strong></p>
-<p style="text-align: justify;">Esta &uacute;ltima regra foi flexibilizada, fazendo com que fosse poss&iacute;vel cada aluno (individualmente) subir para seu pr&oacute;prio reposit&oacute;rio no github o projeto completo. Como grupo, fizemos a documenta&ccedil;&atilde;o das etapas a longo do projeto tendo criado um cronograma com taks dedicadas que podem ser acessadas pelo link abaixo e ser direcionado para a página do projeto no <span style="color: #b96ad9;"><a style="color: #b96ad9;" title="Notion" href="https://www.notion.so/lumcampello/Banco-de-dados-Portf-lio-Cinematogr-fico-468a106dbb8147868e3ecd770a1638f3" target="_blank" rel="noopener"><strong>notion</strong></a>:</span></p>
+<p style="text-align: justify;">Esta &uacute;ltima regra foi flexibilizada, fazendo com que fosse poss&iacute;vel cada aluno (individualmente) subir para seu pr&oacute;prio reposit&oacute;rio no github o projeto completo. Como grupo, fizemos a documenta&ccedil;&atilde;o das etapas ao longo do projeto tendo criado um cronograma com taks dedicadas que podem ser acessadas pelo link abaixo e ser direcionado para a página do projeto no <span style="color: #b96ad9;"><a style="color: #b96ad9;" title="Notion" href="https://www.notion.so/lumcampello/Banco-de-dados-Portf-lio-Cinematogr-fico-468a106dbb8147868e3ecd770a1638f3" target="_blank" rel="noopener"><strong>notion</strong></a>:</span></p>
 <blockquote>
 <p><em><span style="color: #2dc26b;"><a style="color: #2dc26b;" href="https://www.notion.so/lumcampello/Banco-de-dados-Portf-lio-Cinematogr-fico-468a106dbb8147868e3ecd770a1638f3">https://www.notion.so/lumcampello/Banco-de-dados-Portf-lio-Cinematogr-fico-468a106dbb8147868e3ecd770a1638f3</a></span></em></p>
 </blockquote>
+  
+Como forma de garantir o aprendizado de todos os membros e diminuir riscos de que algum erro passasse desapercebido, cada membro utilizava algo que foi criado por outro, de forma que isso servisse também como um teste (a divisão do trabalho se encontra no seguinte arquivo: https://raw.githubusercontent.com/luizacampello/PortfolioCinema_M04_LetsCode/master/Activities.png). O código final produzido pelos membros foi compilado em conjunto neste repositório.
 <h3>&nbsp;</h3>
 <h3>Como nasceu o "Portf&oacute;lio Cinematogr&aacute;fico"</h3>
 <p style="text-align: justify;">Em reuni&otilde;es seriais, o grupo explorou a ideia de trabalhar com o universo cinematográfico, percebendo a dificuldade de alguns cin&eacute;filos e entusiastas em centralizar informa&ccedil;&otilde;es de filmes assistidos e suas pr&oacute;prias avalia&ccedil;&otilde;es dos mesmos, foi idealizado um banco que reunisse filmes (e suas particularidades, como atores, diretores, est&uacute;dio etc) &agrave; um portf&oacute;lio do usu&aacute;rio.&nbsp;</p>
