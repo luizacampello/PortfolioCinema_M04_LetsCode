@@ -36,7 +36,6 @@ Como forma de garantir o aprendizado de todos os membros e diminuir riscos de qu
 <p style="text-align: center;"><strong><img style="display: block; margin-left: auto; margin-right: auto;" src="diagrama_conceitual.jpg" alt="Diagrama Conceitual" width="1080"/></strong></p>
 <p style="text-align: center;"><strong>Modelo L&oacute;gico</strong></p>
 <p style="text-align: center;"><strong><img style="display: block; margin-left: auto; margin-right: auto;" src="diagrama_logico.jpg" alt="Diagrama Lógico" width="1080" /></strong></p>
-<p style="text-align: center;">&nbsp;</p>
 <p style="text-align: center;"><strong>Modelo F&iacute;sico</strong></p>
 <p style="text-align: center;"><strong><img style="display: block; margin-left: auto; margin-right: auto;" src="diagrama_fisico.jpg" alt="Diagrama Físico" width="1080" /></strong></p>
 <h2>&nbsp;</h2>
