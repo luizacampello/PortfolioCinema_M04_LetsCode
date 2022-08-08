@@ -39,7 +39,6 @@ Como forma de garantir o aprendizado de todos os membros e diminuir riscos de qu
 <p style="text-align: center;">&nbsp;</p>
 <p style="text-align: center;"><strong>Modelo F&iacute;sico</strong></p>
 <p style="text-align: center;"><strong><img style="display: block; margin-left: auto; margin-right: auto;" src="diagrama_fisico.jpg" alt="Diagrama Físico" width="1080" /></strong></p>
-<h2>&nbsp;</h2>
 <h2>Instru&ccedil;&otilde;es para rodar (perfeitamente) os arquivos</h2>
 <p>Se voc&ecirc; chegou at&eacute; aqui (tendo lido e acessado todas as informa&ccedil;&otilde;es acima) ent&atilde;o j&aacute; deve estar por dentro de tudo o que fizemos aqui nesse projeto, e para finalmente conseguir acessá-lo e rodar perfeitamente no seu computador voc&ecirc; precisa seguir uma certa ordem de execu&ccedil;&atilde;o. Veja que os arquivos est&atilde;o nomeados de 1 a 18, e &eacute; exatamente nessa ordem que voc&ecirc; execut&aacute;-los.&nbsp;</p>
 <ol>
