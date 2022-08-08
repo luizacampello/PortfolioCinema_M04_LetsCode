@@ -86,7 +86,6 @@ AS
 	ORDER BY mov.[Duração (min)];
 GO
 
-
 CREATE PROCEDURE sp_searchTitle
 	@title VARCHAR (50),
 	@cpf VARCHAR (11)
@@ -105,6 +104,8 @@ AS
 	WHERE por.cpf = @cpf
 	ORDER BY por.Avaliação DESC;
 GO
+
+
 
 -- Update Procedures
 
@@ -130,6 +131,8 @@ AS
 	SET Portfolio.score = @NewScore
 	WHERE Portfolio.cpf = @cpf AND Portfolio.id_Movie = @idMovie;
 GO
+
+
 
 -- Delete Procedures
 
